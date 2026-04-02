@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Repo Iteration"
+  short_description: "Plan and run branch/PR/release workflow for Python repositories"
+  default_prompt: "Use $python-repo-iteration to help me plan and execute a versioned iteration in this Python repository with feature branches, review-ready PRs, and release-prep follow-up."
