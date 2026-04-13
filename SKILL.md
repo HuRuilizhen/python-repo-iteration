@@ -104,13 +104,17 @@ When the user asks for a new iteration:
 Before release:
 
 - ensure the working tree is clean or intentionally understood
+- inspect `.github/workflows` for release or publish automation
+- if a release workflow exists, inspect its trigger conditions before deciding on local release steps
 - run repository checks
 - build the package artifacts
 - run package validation checks
 - confirm docs/examples/metadata match the release state
 - tag only after the intended release commit is on the main branch
 
-If the repository publishes to PyPI or a similar package index, treat upload as the final step after tagging and pushing.
+If the repository already publishes through CI or platform automation, treat tagging and pushing as the local release endpoint and let the configured workflow perform the actual upload.
+
+Only perform a local package-index upload when the repository does not already have a release workflow for that responsibility, or when the user explicitly asks for a manual upload path.
 
 ## Practical Defaults
 
